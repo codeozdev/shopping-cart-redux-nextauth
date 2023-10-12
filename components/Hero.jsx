@@ -1,4 +1,21 @@
-export default function Slider() {
+'use client'
+
+import Slider from 'react-slick'
+import Slide from '@/components/Slide'
+
+export default function Hero() {
+  var settings = {
+    dots: true,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    speed: 500,
+    pauseOnHover: false,
+    arrows: false,
+  }
+
   const slideData = [
     {
       id: 0,
@@ -22,5 +39,20 @@ export default function Slider() {
       price: '$30',
     },
   ]
-  return <div>Slider</div>
+
+  return (
+    <div className='container pt-6 lg:pt-0 w-fit mt-5'>
+      <Slider {...settings}>
+        {slideData.map((item) => (
+          <Slide
+            key={item.id}
+            img={item.img}
+            title={item.title}
+            mainTitle={item.mainTitle}
+            price={item.price}
+          />
+        ))}
+      </Slider>
+    </div>
+  )
 }

@@ -1,11 +1,46 @@
-import Product from '@/components/Product'
+'use client'
 
-export default function Products({ products }) {
+import { useDispatch, useSelector } from 'react-redux'
+import { useEffect } from 'react'
+import { getCategoryProducts, getProducts } from '@/redux/features/productSlice'
+import ProductItem from '@/components/products/ProductItem'
+import Loading from '@/app/loading'
+
+export default function Products({ category, sort }) {
+  const { products, productsStatus } = useSelector((state) => state.products)
+  const dispatch = useDispatch()
+
+  useEffect(() => {
+    if (category) {
+      dispatch(getCategoryProducts(category))
+    } else {
+      dispatch(getProducts())
+    }
+  }, [dispatch, category])
+
+  function sortProducts(products, sort) {
+    if (sort === 'inc') {
+      return products.slice().sort((a, b) => a.price - b.price)
+    } else if (sort === 'dec') {
+      return products.slice().sort((a, b) => b.price - a.price)
+    } else {
+      return products
+    }
+  }
+
   return (
-    <div className='mt-20 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8'>
-      {products.map((product) => (
-        <Product key={product.id} product={product} />
-      ))}
+    <div>
+      {productsStatus === 'LOADING' ? (
+        <Loading />
+      ) : (
+        <>
+          <div className='container grid grid-cols-3 gap-5'>
+            {sortProducts(products, sort).map((product, index) => (
+              <ProductItem key={index} product={product} />
+            ))}
+          </div>
+        </>
+      )}
     </div>
   )
 }
