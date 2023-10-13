@@ -1,12 +1,11 @@
 'use client'
 
 import Link from 'next/link'
-
-import { BsSearch } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 import { useSelector } from 'react-redux'
-import { useSession, signIn, signOut } from 'next-auth/react'
+import { useSession } from 'next-auth/react'
+import SearchBar from '@/components/SearchBar'
 
 export default function Cart() {
   const item = useSelector((state) => state.cart)
@@ -19,15 +18,7 @@ export default function Cart() {
           Logo
         </Link>
 
-        <div className='w-full sm:w-[300px] md:w-[70%] relative px-5 sm:px-0'>
-          <input
-            type='text'
-            className='border-gray-200 border p-2 px-4 rounded-lg w-full focus:outline-none focus:ring-2 focus:ring-gray-200'
-            placeholder='Enter any product name...'
-            onChange={(e) => setQuery(e.target.value)}
-          />
-          <BsSearch className='absolute right-0 top-0 mt-3 mr-8 sm:mr-3 text-gray-400' size={20} />
-        </div>
+        <SearchBar />
 
         <div className='flex items-center gap-4 text-gray-500 text-[30px]'>
           <div className='text-base space-x-4 flex items-center'>

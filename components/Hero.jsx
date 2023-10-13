@@ -41,7 +41,7 @@ export default function Hero() {
   ]
 
   return (
-    <div className='h-[700px]'>
+    <div className='sm:h-[700px]'>
       <Slider {...settings}>
         {slideData.map((item) => (
           <Slide
