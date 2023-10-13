@@ -41,7 +41,7 @@ export default function Hero() {
   ]
 
   return (
-    <div className='container pt-6 lg:pt-0 w-fit mt-5'>
+    <div className='h-[700px]'>
       <Slider {...settings}>
         {slideData.map((item) => (
           <Slide

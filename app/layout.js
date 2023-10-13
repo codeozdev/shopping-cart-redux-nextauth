@@ -22,7 +22,6 @@ export default function RootLayout({ children }) {
         <ReduxProvider>
           <Header />
           <Cart />
-
           {children}
           <Footer />
         </ReduxProvider>

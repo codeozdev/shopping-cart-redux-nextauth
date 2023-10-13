@@ -6,9 +6,11 @@ import { BsSearch } from 'react-icons/bs'
 import { BiUser } from 'react-icons/bi'
 import { HiOutlineShoppingBag } from 'react-icons/hi'
 import { useSelector } from 'react-redux'
+import { useSession, signIn, signOut } from 'next-auth/react'
 
 export default function Cart() {
   const item = useSelector((state) => state.cart)
+  const { data: session } = useSession()
 
   return (
     <div className='border-b border-gray-200 py-6'>
@@ -27,8 +29,19 @@ export default function Cart() {
           <BsSearch className='absolute right-0 top-0 mt-3 mr-8 sm:mr-3 text-gray-400' size={20} />
         </div>
 
-        <div className='flex gap-4 text-gray-500 text-[30px]'>
-          <BiUser />
+        <div className='flex items-center gap-4 text-gray-500 text-[30px]'>
+          <div className='text-base space-x-4 flex items-center'>
+            {!session ? (
+              <>
+                <Link href={'/register'}>Register</Link>
+                <Link href={'/login'}>Login</Link>
+              </>
+            ) : (
+              <Link href={'/profile'}>
+                <BiUser size={30} />
+              </Link>
+            )}
+          </div>
 
           <Link href={'/cart'} className='relative'>
             <HiOutlineShoppingBag />

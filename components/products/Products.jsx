@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { useEffect } from 'react'
 import { getCategoryProducts, getProducts } from '@/redux/features/productSlice'
 import ProductItem from '@/components/products/ProductItem'
-import Loading from '@/app/loading'
+import Loading from '@/components/Loading'
 
 export default function Products({ category, sort }) {
   const { products, productsStatus } = useSelector((state) => state.products)
@@ -34,7 +34,7 @@ export default function Products({ category, sort }) {
         <Loading />
       ) : (
         <>
-          <div className='container grid grid-cols-3 gap-5'>
+          <div className='container grid sm:grid-cols-3 gap-5'>
             {sortProducts(products, sort).map((product, index) => (
               <ProductItem key={index} product={product} />
             ))}

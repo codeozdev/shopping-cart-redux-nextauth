@@ -7,7 +7,7 @@ export default async function CategoryPage({ params: { id } }) {
     const product = await res.json()
 
     return (
-      <div className='container flex flex-col sm:flex-row items-center sm:justify-center gap-10 sm:h-[calc(100vh-290px)] mt-10 sm:mt-0 px-5'>
+      <div className='container flex flex-col sm:flex-row items-center sm:justify-center gap-10 sm:h-[calc(100vh-230px)] mt-10 sm:mt-0 px-5'>
         <ProductImage product={product} />
 
         <div className='space-y-5 text-center'>

@@ -21,7 +21,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className='container my-10 flex flex-col gap-5 sm:gap-10 px-5 sm:px-0 sm:h-[calc(100vh-370px)]'>
+    <div className='container my-10 flex flex-col gap-5 sm:gap-10 px-5 sm:px-0 sm:h-[calc(100vh-310px)]'>
       {cartItems.map((item) => (
         <div key={item.id} className='flex items-center justify-between'>
           <div className='flex items-center gap-5'>

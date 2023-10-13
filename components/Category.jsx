@@ -14,8 +14,8 @@ export default function Category({ setCategory, setSort }) {
   }, [dispatch])
 
   return (
-    <div className='container sm:my-12 flex justify-between w-full'>
-      <div className='flex items-center gap-5'>
+    <div className='container sm:my-12 flex flex-wrap justify-center sm:justify-between w-full'>
+      <div className='flex items-center gap-5 flex-wrap justify-center'>
         {categories.map((category, index) => (
           <div
             key={index}
