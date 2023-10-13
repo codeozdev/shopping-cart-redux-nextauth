@@ -3,3 +3,4 @@
 - SearchBar da ürünler arasında arama yapıldı.
 - Register ve Login işlemleri yapıldı. (NextAuth)
 - Sepete ürün ekleme işlemi, ürünün sepette adetinin artırılması işlemi ve sepetteki ürünün silinmesi işlemleri yapıldı.
+- Mobil uyumu sadece İphone 12/13 Pro için yapılmıştır.

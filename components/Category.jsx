@@ -14,7 +14,7 @@ export default function Category({ setCategory, setSort }) {
   }, [dispatch])
 
   return (
-    <div className='container sm:my-12 flex flex-wrap justify-center sm:justify-between w-full'>
+    <div className='container sm:my-12 flex flex-wrap justify-center sm:justify-between w-full z-50'>
       <div className='flex items-center gap-5 flex-wrap justify-center'>
         {categories.map((category, index) => (
           <div
