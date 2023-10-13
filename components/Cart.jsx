@@ -24,7 +24,9 @@ export default function Cart() {
           <div className='text-base space-x-4 flex items-center'>
             {!session ? (
               <>
-                <Link href={'/register'}>Register</Link>
+                <Link href={'/register'} className='outline-none'>
+                  Register
+                </Link>
                 <Link href={'/login'}>Login</Link>
               </>
             ) : (
