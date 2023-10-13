@@ -31,6 +31,7 @@ export default function LoginForm() {
         return toast.error("Account doesn't exist")
       } else {
         router.refresh()
+        toast('Logged in successfully')
         router.push('/')
       }
     } catch (error) {
