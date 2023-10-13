@@ -5,7 +5,7 @@ import Slide from '@/components/Slide'
 
 export default function Hero() {
   var settings = {
-    dots: true,
+    // dots: true,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,

@@ -1,6 +1,6 @@
 export default function Sorting({ setSort }) {
   return (
-    <div className='p-5 flex items-center justify-end'>
+    <div className='p-5 flex items-center justify-end z-50'>
       <select
         name=''
         id=''

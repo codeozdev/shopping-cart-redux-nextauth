@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Slide({ img, title, mainTitle, price }) {
   return (
@@ -14,9 +15,11 @@ export default function Slide({ img, title, mainTitle, price }) {
             starting at <b className='text-[20px] md:text-[24px] lg:text-[30px]'>{price}</b>
             .00
           </h3>
-          <div className='bg-accent text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:bg-blackish'>
+          <Link
+            href={'/cart'}
+            className='bg-accent text-white text-[14px] md:text-[16px] p-2 px-4 rounded-lg inline-block cursor-pointer hover:bg-blackish'>
             Shop Now
-          </div>
+          </Link>
         </div>
 
         <Image
