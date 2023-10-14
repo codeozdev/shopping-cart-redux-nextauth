@@ -11,7 +11,7 @@ export default async function ProfilePage() {
     redirect('/api/auth/signin?callbackUrl=/server')
   }
 
-  console.log(session.user)
+  // console.log(session.user)
 
   return (
     <div className='container h-[calc(100vh-230px)]'>
